@@ -1,0 +1,228 @@
+:root {
+  --bg: #f3f8ff;
+  --card: #ffffff;
+  --accent: #1f6feb;
+  --accent-light: #a5c8ff;
+  --text-dark: #0f172a;
+  --text-muted: #475569;
+  --border: rgba(15,23,42,0.08);
+  --shadow: 0 6px 20px rgba(15,23,42,0.06);
+  --radius: 14px;
+  --maxw: 1100px;
+  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  height: 100%;
+  background: var(--bg);
+  color: var(--text-dark);
+  -webkit-font-smoothing: antialiased;
+}
+
+.container {
+  width: min(94%, var(--maxw));
+  margin: 0 auto;
+  padding: 24px 0;
+}
+
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: rgba(255,255,255,0.9);
+  border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(6px);
+  z-index: 100;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.04);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 10px 0;
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.navbar {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.navbar a {
+  color: var(--text-dark);
+  text-decoration: none;
+  padding: 8px 14px;
+  border-radius: 8px;
+  transition: 0.25s ease;
+}
+.navbar a:hover {
+  background: var(--accent);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.hero {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  align-items: center;
+  margin-top: 100px;
+  background: linear-gradient(135deg, #dbeafe, #eff6ff);
+  border-radius: var(--radius);
+  padding: 32px;
+  box-shadow: var(--shadow);
+}
+
+.hero-text {
+  flex: 1 1 400px;
+}
+
+.hero-text h2 {
+  font-size: 2rem;
+  color: var(--accent);
+  margin-bottom: 10px;
+}
+
+.lead {
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.hero-figure {
+  flex: 1 1 300px;
+  text-align: center;
+  font-size: 13px;
+  color: var(--text-muted);
+}
+.hero-figure img {
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--radius);
+  display: block;
+}
+.image-placeholder {
+  background: linear-gradient(135deg, #1f6feb, #67c7d7);
+  border-radius: var(--radius);
+  color: #fff;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  box-shadow: 0 8px 16px rgba(31,111,235,0.2);
+  margin-bottom: 8px;
+}
+
+.card {
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: 20px 24px;
+  margin: 24px 0;
+  box-shadow: var(--shadow);
+  border-left: 5px solid var(--accent-light);
+  transition: 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(31,111,235,0.15);
+}
+
+.card h3 {
+  color: var(--accent);
+  margin-top: 0;
+}
+
+.card p, .card li {
+  line-height: 1.6;
+}
+
+.facts ol {
+  padding-left: 20px;
+  margin: 0;
+}
+.facts li {
+  margin: 10px 0;
+}
+.facts li::marker {
+  color: var(--accent);
+  font-weight: bold;
+}
+
+.timeline-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+}
+.t-item {
+  background: linear-gradient(180deg,#ffffff,#f9fbff);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 14px;
+  box-shadow: var(--shadow);
+  transition: 0.25s;
+}
+.t-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 18px rgba(31,111,235,0.12);
+}
+.t-item strong {
+  display: block;
+  color: var(--accent);
+  margin-bottom: 6px;
+}
+
+.site-footer {
+  margin-top: 40px;
+  padding: 20px 0;
+  border-top: 1px solid var(--border);
+  font-size: 14px;
+  color: var(--text-muted);
+  text-align: center;
+}
+.site-footer a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+@media (max-width: 768px) {
+  .header-inner {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .navbar {
+    justify-content: center;
+    gap: 8px;
+  }
+  .hero {
+    flex-direction: column;
+    text-align: left;
+    padding: 24px;
+    margin-top: 150px;
+  }
+  .hero-figure {
+    width: 100%;
+  }
+  .hero-text h2 {
+    font-size: 1.8rem;
+  }
+  .timeline-grid {
+    grid-template-columns: 1fr;
+  }
+  .logo {
+    font-size: 18px;
+  }
+}
