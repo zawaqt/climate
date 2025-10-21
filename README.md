@@ -1,3 +1,3 @@
 contributors:
-Andrew lin styles.css style & pdf
-CHen wei Fan html style & url
+Andrew lin styles.css style html design
+CHen wei Fan pdf and topic idea
